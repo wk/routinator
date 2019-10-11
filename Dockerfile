@@ -8,7 +8,7 @@ COPY . .
 
 RUN cargo build --target x86_64-alpine-linux-musl --release --locked
 
-# -- stage 2: create alpine-based container with the static routinator
+# -- stage 2: create alpine-based container with the routinator
 #             executable
 FROM alpine:3.10.2
 COPY --from=build /tmp/routinator/target/x86_64-alpine-linux-musl/release/routinator /usr/local/bin/
